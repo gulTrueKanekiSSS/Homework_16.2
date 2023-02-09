@@ -22,10 +22,6 @@ class User(db.Model):
     phone = db.Column(db.String)
 
     def to_dict(self) -> dict:
-        """
-        Метод производит перевод полей класса в словарь для дальнейшего конвертирования в JSON.
-        :return: Словарь с данными
-        """
         return {
             "id": self.id,
             "first_name": self.first_name,
@@ -53,10 +49,6 @@ class Order(db.Model):
     executor = db.relationship("User", foreign_keys=[executor_id])
 
     def to_dict(self) -> dict:
-        """
-        Метод производит перевод полей класса в словарь для дальнейшего конвертирования в JSON.
-        :return: Словарь с данными
-        """
         return {
             "id": self.id,
             "name": self.name,
@@ -80,10 +72,6 @@ class Offer(db.Model):
     order = db.relationship("Order")
 
     def to_dict(self) -> dict:
-        """
-        Метод производит перевод полей класса в словарь для дальнейшего конвертирования в JSON.
-        :return: Словарь с данными
-        """
         return {
             "id": self.id,
             "order_id": self.order_id,
