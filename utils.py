@@ -2,11 +2,7 @@ import json
 
 
 def read_json_file(file) -> list:
-    """
-    Функция производит чтение данных из .json файла
-    :param file: Файл .json, который необходимо прочитать
-    :return: Данные из файла .json
-    """
+
     with open(file, encoding="utf-8") as f:
         json_data = json.load(f)
 
@@ -14,12 +10,6 @@ def read_json_file(file) -> list:
 
 
 def add_orders_data(class_name, data) -> list:
-    """
-    Функция производит наполнение БД экземплярами класса.
-    :param class_name: Класс, экземпляр которого необходимо создать.
-    :param data: исходные данные для заполнения экземпляров.
-    :return: Список экземпляров класса Order
-    """
     orders = []
     for order in data:
         order_to_add = class_name(
@@ -39,12 +29,7 @@ def add_orders_data(class_name, data) -> list:
 
 
 def add_users_data(class_name, data) -> list:
-    """
-    Функция производит наполнение БД экземплярами класса.
-    :param class_name: Класс, экземпляр которого необходимо создать.
-    :param data: исходные данные для заполнения экземпляров.
-    :return: Список экземпляров класса User
-    """
+
     users = []
     for user in data:
         user_to_add = class_name(
@@ -62,12 +47,6 @@ def add_users_data(class_name, data) -> list:
 
 
 def add_offers_data(class_name, data) -> list:
-    """
-    Функция производит наполнение БД экземплярами класса.
-    :param class_name: Класс, экземпляр которого необходимо создать.
-    :param data: исходные данные для заполнения экземпляров.
-    :return: Список экземпляров класса Offer
-    """
     offers = []
     for offer in data:
         offer_to_add = class_name(
@@ -81,12 +60,7 @@ def add_offers_data(class_name, data) -> list:
 
 
 def add_new_user(class_name, data):
-    """
-    Функция производит добавление нового экземпляра класса User
-    :param class_name: Класс, экземпляр которого необходимо создать.
-    :param data: исходные данные для заполнения экземпляра.
-    :return: Экземпляр класса
-    """
+
     new_user = class_name(
         id=data['id'],
         first_name=data["first_name"],
@@ -100,12 +74,7 @@ def add_new_user(class_name, data):
 
 
 def add_new_order(class_name, data):
-    """
-    Функция производит добавление нового экземпляра класса Order
-    :param class_name: Класс, экземпляр которого необходимо создать.
-    :param data: исходные данные для заполнения экземпляра.
-    :return: Экземпляр класса
-    """
+
     new_order = class_name(
         id=data['id'],
         name=data["name"],
@@ -121,12 +90,7 @@ def add_new_order(class_name, data):
 
 
 def add_new_offer(class_name, data):
-    """
-    Функция производит добавление нового экземпляра класса Offer
-    :param class_name: Класс, экземпляр которого необходимо создать.
-    :param data: исходные данные для заполнения экземпляра.
-    :return: Экземпляр класса
-    """
+
     new_offer = class_name(
         id=data['id'],
         order_id=data["order_id"],
